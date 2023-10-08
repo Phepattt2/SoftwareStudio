@@ -1,0 +1,39 @@
+.CounterContainer {
+    background-color: rgb(144, 207, 49);
+    border: 2px solid purple;
+    border-radius: 10px;
+    border-color: purple;
+    width: 80px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.AllContainer {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    /* Stack children vertically */
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.Text {
+    font-size: 30px;
+    color: purple;
+}
+
+.VoteButtonContainer {
+    margin-top : 10px
+}
+
+.UnvoteButtonContainer {
+    margin-top : 10px
+}
+
+.button {
+    height: 35px;
+    color: rgb(0, 0, 0);
+}
