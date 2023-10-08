@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>63010702_Exercise3</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<style>
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        background-color: rgb(0, 0, 0, 0.5);
+        background-image: url('https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    }
+
+    h1 {
+        font-size: 350%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        color: rgb(207, 207, 207);
+        font-family: "Copperplate", fantasy;
+    }
+
+    br {
+        display: block;
+        content: "";
+        margin: 50px 0;
+    }
+
+
+    nav {
+        font-family: "Copperplate", fantasy;
+    }
+
+    .container:hover .card-img-top {
+        opacity: 0.8;
+    }
+
+    .container:hover .card-title {
+        opacity: 1;
+        text-align: center;
+    }
+
+    .card-img-top {
+        opacity: 1;
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .card-title {
+        top: 20%;
+        left: 50%;
+        opacity: 0;
+        color: white;
+        font-size: 19px;
+        position: relative;
+        text-align: center;
+        padding: 16px 32px;
+        transition: .5s ease;
+        transform: translate(-50%, -50%);
+        font-family: "Copperplate", fantasy;
+        border-radius: 15px;
+        background-color: rgb(218, 180, 111);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+    .card {
+        margin-top: 2px;
+    }
+
+
+    .nav link {
+        font-size: 50px;
+    }
+
+    header {
+        margin-top: 15%;
+        margin-left: 5%;
+        width: 100px;
+        height: 100px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .container {
+
+        margin-top: 5%;
+        margin-left: 40%;
+        width: 35%;
+        position: relative;
+    }
+
+    .column {
+        margin-top: -70%;
+    }
+
+    .headerText {
+        display: flex;
+        margin-left: 5%;
+        color: rgb(255, 255, 255);
+        font-size: 7em;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-opacity-75 bg-dark">
+        <img src="https://static.vecteezy.com/system/resources/previews/017/395/384/original/youtube-music-icon-free-png.png"
+            alt="Marvel-logo" width="100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#first">tattoo colour</a></li>
+                <li class="nav-item"><a class="nav-link" href="#second">H3F</a></li>
+                <li class="nav-item"><a class="nav-link" href="#third">YONLAPA</a></li>
+                <li class="nav-item"><a class="nav-link" href="#fourth">wave to earth</a></li>
+                <li class="nav-item"><a class="nav-link" href="#fifth">television off</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sixth">sunset rollercoaster</a></li>
+                <li class="nav-item"><a class="nav-link" href="#seventh">solitude is bliss</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <br />
+
+    <header>
+        <h1 class="headerText"> My Top 7 : music band</h1>
+    </header>
+
+    <br />
+
+    <div class="container">
+
+        <div class="column">
+
+            <div class="card bg-opacity-75 bg-dark text-white" style="width: 100%;" id="first">
+                <img class="card-img-top" src="https://f.ptcdn.info/480/045/000/oci9orvg92q6VAXNiKy-o.jpg"
+                    alt="tattoo colour band's image">
+                <div class="card-body">
+                    <h5 class="card-title">1st band : tattoo colour</h5>
+                    <p class="card-text">แทททูคัลเลอร์ (อังกฤษ: Tattoo Colour) เป็นวงดนตรีสัญชาติไทย
+                        เริ่มรวมวงกันครั้งแรกเป็นวงดนตรีในระดับมัธยมศึกษา ประกอบไปด้วยหรินทร์ สุธรรมจรัส รัฐ พิฆาตไพรี
+                        เอกชัย โชติรุ่งโรจน์ และ ธนบดี ธีรพงศ์ภักดี โดยใช้ชื่อว่า "ไอศกรีม 479" (I Scream 479)
+                        และได้แข่งขันการร้องเพลงและแต่งเพลงจนต่อมาได้สังกัดค่ายเพลงสมอลล์รูม .</p>
+
+                </div>
+            </div>
+
+            <br />
+
+            <div class="card bg-opacity-75 bg-dark text-white" style="width: 100%;" id="second">
+                <img class="card-img-top"
+                    src="https://i.ytimg.com/vi/akmnEK-K0Lw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC5ISZCuHtgyhFIG6sQ9qCgeubojw"
+                    alt="tattoo colour band's image">
+                <div class="card-body">
+                    <h5 class="card-title">2nd band : H 3 F</h5>
+                    <p class="card-text">H 3 F คือกลุ่มเพื่อน 4
+                        คนจากมหาวิทยาลัยรังสิตที่ผลัดใบมาจากวงดนตรีอินดี้สายอินเตอร์ Penny Time
+                        แล้วหันมาผนึกกำลังกันทำวงดนตรีแบบจริงจัง ฟังง่าย ผสมอาร์แอนด์บีและกีตาร์บลูส์
+                        โดยเริ่มทำกันมาตั้งแต่ปลายปี 2017</p>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="card bg-opacity-75 bg-dark text-white " style="width: 100%;" id="third">
+                <img class="card-img-top"
+                    src="https://www.fungjaizine.com/wp-content/uploads/2020/01/yonlapa-fungjaizine-fungjai-cover-1.jpg"
+                    alt="yonlapa band's image">
+                <div class="card-body">
+                    <h5 class="card-title">3rd band : YONLAPA</h5>
+                    <p class="card-text">YONLAPA มีสมาชิกทั้งหมด 4 คน คือ น้อยหน่า ยลภา เพียรพนัสสัก (ร้องนำ,กีตาร์),
+                        กันย์ อานุภาพ เฟยลุง (กีต้าร์), นาวิน รักในศิล (เบส) และ ฟิว ชลันธร สุนทรพิทักษ์ (กลอง)
+                        ซึ่งรวมตัวทำวงมานาน 2 ปี ป๊อบร็อคบวกอัลเทอร์เนทีฟผสมผสานชูเกสคือแนวเพลงของพวกเขาที่เราสัมผัสได้
+                    </p>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="card bg-opacity-75 bg-dark text-white " style="width: 100%;" id="fourth">
+                <img class="card-img-top"
+                    src="https://stats.fm/_next/image?url=https%3A%2F%2Fi.scdn.co%2Fimage%2Fab6761610000e5eb9a0326b9320c71614b3f90b9&w=256&q=75"
+                    alt="wave to earth band's image">
+                <div class="card-body">
+                    <h5 class="card-title">4th band : wave to earth</h5>
+                    <p class="card-text">Wave To Earth (웨이브투어스) currently consists of 3 members: Shin Donggyu, Daniel
+                        Kim, and Soonjong Cha. Even though they’re a Korean band, most of their songs are written in
+                        English. Originally the band consisted of Shin Donggyu and Daniel, debuting with their single
+                        ‘Wave‘ in August 2019. In January of 2020, Wave To Earth released their first EP [Wave 0.01]
+                        with their new member Soonjong Cha. They’re currently under We Are Not 0, POCLANOS. While the
+                        three of them are the official members, the session members also include Jo Jung-geun
+                        (keyboard), Jeon-min (saxophone) and Hong Seung-gi, an artwork member. In November 21 of 2021,
+                        it was announced that they were under Wavy. The name Wave to Earth reveals the band’s desire to
+                        “become the new wave” and expand its own universe across the world.</p>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="card bg-opacity-75 bg-dark text-white " style="width: 100%;" id="fifth">
+                <img class="card-img-top" src="https://i.ytimg.com/vi/VVnzgUdyNsE/maxresdefault.jpg"
+                    alt="television off band's image">
+                <div class="card-body">
+                    <h5 class="card-title">5th band : television off</h5>
+                    <p class="card-text">Television off is a four-member male band under Smallroom. They debuted on
+                        October 2, 2020 with the digital single "การเดินทางที่ไม่มีทาง".</p>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="card bg-opacity-75 bg-dark text-white " style="width: 100%;" id="sixth">
+                <img class="card-img-top" src="https://i.scdn.co/image/ab6761610000e5ebbd7bcf2eb1f73e4378ed5364"
+                    alt="sunset rollercoaster band's image">
+                <div class="card-body ">
+                    <h5 class="card-title">6th band : sunset rollercoaster</h5>
+                    <p class="card-text">Sunset Rollercoaster (Chinese: 落日飛車 Luòrì fēichē) is a 5-piece jazz-influenced
+                        synth-pop band from Taipei, Taiwan, consisting of Kuo-Hung Tseng (vocals, guitar), Hung-Li Chen
+                        (bass), Shao-Hsuan Wang (keyboard), Tsun-Lung Lo (drums), and Hao-Ting Huang
+                        (saxophone)—previously with Shih-Wei Huang (percussion). The name originated from a Photo Booth
+                        picture the group had taken for their MySpace profile in 2009, which had a rollercoaster in
+                        front of a sunset as the background. The band mostly sings in English, despite being based in a
+                        Mandarin-speaking country, which, according to lead singer Kuo Kuo, is to allow them to speak
+                        indirectly and allow audiences to discern their own meaning.</p>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="card bg-opacity-75 bg-dark text-white " style="width: 100%;" id="seventh">
+                <img class="card-img-top" src="https://waymagazine.org/wp-content/uploads/2019/03/sol--scaled.jpg"
+                    alt="solitude is bliss band's image">
+                <div class="card-body">
+                    <h5 class="card-title">7th band : solitude is bliss</h5>
+                    <p class="card-text">Solitude Is Bliss is an alternative rock band from Chiang Mai in the north of
+                        Thailand. They are signed to their own independant label, Pollinate Records.</p>
+                </div>
+            </div>
+
+            <br />
+
+        </div>
+    </div>
+
+</body>
+
+</html>
