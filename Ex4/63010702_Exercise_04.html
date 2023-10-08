@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="maincontainer"></div>
+    <script>
+        // my info
+        const textDict = { "name": "Peerapat Sattapornara , ID 63010702", "subject": "Software Studio", "semester": "2023/1" }
+
+        // program counter 
+        let showInfoCounter = false
+        let buttonCounter = false
+
+        // setup worker 
+        const webWorker = new Worker("worker.js")
+
+        // web elements 
+        const header = document.createElement("h2")
+        const buttonContainer = document.createElement("div");
+        const button = document.createElement("button")
+
+        const textP = document.createElement("p")
+
+        const showedUl = document.createElement("div");
+        const myName = document.createElement("li")
+        const subject = document.createElement("li")
+        const semester = document.createElement("li")
+
+        const newH1 = document.createElement("h1")
+
+        const snapLists = document.createElement("ul")
+
+        const fireworkList = document.createElement("li")
+
+        const crestList = document.createElement("li")
+
+        const actionList = document.createElement("li")
+
+        const buffaloList = document.createElement("li")
+
+        const image = document.createElement("img")
+        const imgContainer = document.createElement("div"); // Use "div" here
+
+        // set attributes for h1 
+        header.textContent = "Exercise 04: JavaScript & DOM"
+
+        // Set attributes for button
+    
+        button.id = "button";
+        button.textContent = "Click me to display Date and Time"
+        buttonContainer.appendChild(button);
+     
+        buttonContainer.style.height="60px"
+
+    
+        buttonContainer.style.display = "block"
+        // Set attributes for Ul and showed li
+        textP.style.width = "90px"
+        textP.textContent = "Personal Info"
+        textP.style.color = "pink"
+        textP.style.textDecoration = "underline";
+
+        // Set showed li 
+
+        showedUl.style.display = "none"; // Change to showedUl here
+        myName.style.marginLeft = "30px"
+        subject.style.marginLeft = "30px"
+        semester.style.marginLeft = "30px"
+        showedUl.appendChild(myName); // Change to showedUl here
+        showedUl.appendChild(subject); // Change to showedUl here
+        showedUl.appendChild(semester); // Change to showedUl here
+
+        // Set attributes for h2 
+        newH1.id = "snapshot"
+        newH1.textContent = "Snapshots"
+
+        // Set attributes for div 
+
+
+        snapLists.appendChild(fireworkList)
+        snapLists.appendChild(crestList)
+        snapLists.appendChild(actionList)
+        snapLists.appendChild(buffaloList)
+
+        
+
+        // Set attributes for li firework 
+        fireworkList.textContent = "Fireworks"
+
+        // Set attributes for li crest 
+        crestList.textContent = "Crest"
+
+        // Set attributes for li action 
+        actionList.textContent = "Action"
+
+        // Set attributes for li buffalo 
+        buffaloList.textContent = "Buffalo"
+        // buffalo.style.textDecoration = "underline"
+
+        const liElements = snapLists.querySelectorAll("li");
+        liElements.forEach((li) => {
+            const aElement = document.createElement("a");
+            aElement.href = "#"
+            aElement.textContent = li.textContent
+            li.innerHTML = ""
+            li.appendChild(aElement)
+        });
+
+        // Set attributes for image 
+        image.src = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Kmitl.jpg"
+        image.height = 500
+        image.width = 600
+
+        imgContainer.appendChild(image)
+
+        document.body.appendChild(header);
+        document.body.appendChild(buttonContainer);
+        document.body.appendChild(textP);
+        document.body.appendChild(showedUl); // Change to showedUl here
+        document.body.appendChild(newH1); // Change to shownUl here
+        document.body.appendChild(snapLists);
+        document.body.appendChild(imgContainer);
+        // Append the image below the other elements
+
+        fireworkList.addEventListener('click', () => {
+            image.src = "https://ichef.bbci.co.uk/images/ic/1920x1080/p05lqc4f.jpg"
+        })
+        crestList.addEventListener('click', () => {
+            image.src = "https://cosmenet-in-th.s3-bkk.nipa.cloud/upload/iblock/44f/crest-logo-600.jpg"
+        })
+        actionList.addEventListener('click', () => {
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzw8p8woswrXZrLq1CJp5amhMy41m4dQqwPRQcZQC9ogHWAtOfNUT1WHEVmnSVSJpxw9c&usqp=CAU"
+        })
+        buffaloList.addEventListener('click', ()=>{
+            image.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Syncerus_caffer_nanus_001.JPG/1280px-Syncerus_caffer_nanus_001.JPG"
+        })
+
+        textP.addEventListener("mouseover", () => {
+            textP.style.backgroundColor = "yellow"
+        })
+
+        textP.addEventListener("mouseout", () => {
+            textP.style.backgroundColor = ""
+        })
+
+        // event manager //
+        textP.addEventListener("click", () => {
+            showInfoCounter = !showInfoCounter
+            if (showInfoCounter) {
+                showedUl.style.display = "inline"
+                showedUl.style.marginLeft = "40px"
+                myName.textContent = textDict["name"]
+                subject.textContent = textDict["subject"]
+                semester.textContent = textDict["semester"]
+            } else {
+                showedUl.style.display = "none"
+            }
+
+        })
+
+        button.addEventListener("click", () => {
+            buttonCounter = !buttonCounter
+
+            if (buttonCounter) {
+                button.style.position = "fixed";
+                button.style.right = "0";
+                button.style.top = "0";
+                webWorker.postMessage("buttonClickedState");
+            } else {
+                button.style.position = "relative";
+                webWorker.postMessage("buttonCancleState");
+            }
+        })
+
+        webWorker.onmessage = function (event) {
+            button.textContent = event.data.time
+            button.style.backgroundColor = event.data.color
+        }
+    </script>
+</body>
+
+</html>
