@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewData["Title"] = "Quiz Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .fieldset {
+            border: solid;
+            color: #000000;
+            margin: 2em 1em 1em;
+            padding: 0 1em 1em;
+        }
+
+        .legend {
+            transform: translatey(-50%);
+            width: max-content;
+            background: white;
+            padding: 0 0.15em;
+        }
+        
+        .custom-textbox {
+            width: 300px; /* Adjust the width as needed */
+            padding: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        .textbox {
+            margin-left : 10px ;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="@Url.Action("submitted","quiz")">
+    <div class="fieldset ">
+        <p class="legend"><i>Contact Information</i></p>
+        <p>
+            First name:<input type="text" class="textbox" name="FirstName">
+        </p>
+        <p>
+            Last name:<input type="text" class="textbox" name="LastName">
+        </p>
+        <p>
+                E-mail:<input type="text" class="textbox" name="Email">
+        </p>
+    </div>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Compettion Question</i></p>
+        <p>
+            How rall is the Eiffel Tower in Paris,France?
+        <div>
+            <input type="radio" id="one" name="Answer" value="584ft">
+            <label for="one">584ft</label><br>
+            <input type="radio" id="two" name="Answer" value="784ft">
+            <label for="two">784ft</label><br>
+            <input type="radio" id="three" name="Answer" value="984ft">
+            <label for="three">984ft</label><br>
+            <input type="radio" id="four" name="Answer" value="1184ft">
+            <label for="four">1184ft</label>
+        </div>
+        </p>
+    </div>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Tiebreaker Question</i></p>
+        <p>In 25 words or less, say why you would like to win $10,000:</p>
+        <textarea class="custom-textbox" rows="4" placeholder="Type here" name="TiebreakerAnswer"></textarea>
+        <p>Remaining words: <span id="word-count">0</span></p>
+        <script>
+            const textarea = document.querySelector('.custom-textbox');
+            const wordCountDisplay = document.getElementById('word-count');
+            
+            textarea.addEventListener('input', function() {
+                const words = textarea.value.trim().split(/\s+/).filter(Boolean);
+                const wordCount = words.length;
+                wordCountDisplay.textContent =  25 - wordCount;
+    
+                if (wordCount >= 25) { // Change the word limit as needed
+                    textarea.value = words.slice(0, 25).join(' ');
+                    wordCountDisplay.textContent = wordCount-25; // Display the word limit
+                }
+            });
+        </script>
+    </div>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Enter Compettion</i></p>
+        <button type="submit">  Enter Compettion  </button>
+    </div>
+    </form>
+
+
+</body>
+
+</html>

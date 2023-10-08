@@ -1,0 +1,103 @@
+﻿@model Ex_6.Models.FormData
+
+@{
+    ViewData["Title"] = "Submitted Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .fieldset {
+            border: solid;
+            color: #000000;
+            margin: 2em 1em 1em;
+            padding: 0 1em 1em;
+        }
+
+        .legend {
+            transform: translatey(-50%);
+            width: max-content;
+            background: white;
+            padding: 0 0.15em;
+        }
+        
+        .custom-textbox {
+            width: 300px; /* Adjust the width as needed */
+            padding: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        .textbox {
+            margin-left : 10px ;
+        }
+
+        .textHeader {
+            text-align : center ; 
+            color: green ;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="@Url.Action("submitted","quiz")">
+
+        <h1 class="textHeader">Subbmitted Result💯📝</h1>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Contact Information</i></p>
+        <p>
+                First name:<input type="text" class="textbox" name="FirstName" readonly value="@Model.FirstName">
+        </p>
+        <p>
+                Last name:<input type="text" class="textbox" name="LastName" readonly value="@Model.LastName">
+        </p>
+        <p>
+                E-mail:<input type="text" class="textbox" name="Email" readonly value="@Model.Email">
+        </p>
+    </div>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Compettion Question</i></p>
+        <p>
+            How rall is the Eiffel Tower in Paris,France?
+        <div>
+                    <input type="radio" id="one" name="Answer" value="584ft" @(Model.Answer == "584ft" ? "checked" : "disabled") >
+            <label for="one">584ft</label><br>
+                    <input type="radio" id="two" name="Answer" value="784ft" @(Model.Answer == "784ft" ? "checked" : "disabled")>
+            <label for="two">784ft</label><br>
+                    <input type="radio" id="three" name="Answer" value="984ft" @(Model.Answer == "984ft" ? "checked" : "disabled")>
+            <label for="three">984ft</label><br>
+                    <input type="radio" id="four" name="Answer" value="1184ft" @(Model.Answer == "1184ft" ? "checked" : "disabled")>
+            <label for="four">1184ft</label>
+        </div>
+        </p>
+    </div>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Tiebreaker Question</i></p>
+        <p>In 25 words or less, say why you would like to win $10,000:</p>
+            <textarea class="custom-textbox" rows="4" placeholder="@Model.TiebreakerAnswer" name="TiebreakerAnswer" readonly></textarea>
+    </div>
+
+    <div class="fieldset ">
+        <p class="legend"><i>Enter Compettion</i></p>
+        <button type="submit">  Enter Compettion  </button>
+    </div>
+    </form>
+
+
+</body>
+
+</html>
